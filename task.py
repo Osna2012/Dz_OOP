@@ -45,10 +45,10 @@ class Student:
         else:
             if self.get_avg_grade() < other_student.get_avg_grade():
                 print(f'{self.name} {self.surname} учится хуже, чем {other_student.name} {other_student.surname}')
-            elif self.get_avg_grade() > other_student.get_avg_grade():
+                return True
+            else:
                 print(f'{self.name} {self.surname} учится лучше, чем {other_student.name} {other_student.surname}')
-            elif self.get_avg_grade() == other_student.get_avg_grade():
-                print("Ученики учатся одинакого")
+                return False
 
     #метод добавление ученика на курс
     def attach_course(self, courses):
@@ -98,13 +98,12 @@ class Lecturer(Mentor):
             print('Такого лектора нет!')
             return
         else:
-            compare = self.get_avg_grade() < other_lecturer.get_avg_grade()
             if self.get_avg_grade() < other_lecturer.get_avg_grade():
                 print(f'{self.name} {self.surname} ведет хуже, чем {other_lecturer.name} {other_lecturer.surname}')
-            elif self.get_avg_grade() > other_lecturer.get_avg_grade():
+                return True
+            else:
                 print(f'{self.name} {self.surname} ведет лучше, чем {other_lecturer.name} {other_lecturer.surname}')
-            elif self.get_avg_grade() == other_lecturer.get_avg_grade():
-                print("Ведут одинакого")
+                return False
 
     #метод добавление лектора на курс
     def attach_course(self, courses):
@@ -184,10 +183,10 @@ print(reviewer1)
 print('\n')
 
 #сравниваем студентов
-print(student1 > student2)
+student1 > student2
 
 #сравниваем лекторов
-print(lector1 < lector2)
+lector1 < lector2
 
 # средняя оценка за доманшние задание по курсу
 def get_avg_hw_grade(student_list, course):
